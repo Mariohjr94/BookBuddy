@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { useState } from "react";
+import React from "react";
 
 const NavBar = () => {
   const [expanded, setExpanded] = useState([]);

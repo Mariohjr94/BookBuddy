@@ -1,34 +1,35 @@
-/* eslint-disable react/prop-types */
-/* TODO - add your code to create a functional React component that renders a login form */
+import React from "react";
 import { useState } from "react";
 import { Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 function Login({ setToken, setIsLoggedIn, isLoggedIn }) {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-    async function handleLogin(e) {
-        e.preventDefault();
-        console.log(email);
-        const response = await fetch('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/login',
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    email: email,
-                    password: password
-                  })
-            })
-        const data = await response.json();
-        console.log(data)
-        setToken(data.token);
-        setIsLoggedIn(true);
-        navigate("/account")
-    }     
+  async function handleLogin(e) {
+    e.preventDefault();
+    console.log(email);
+    const response = await fetch(
+      "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      }
+    );
+    const data = await response.json();
+    console.log(data);
+    setToken(data.token);
+    setIsLoggedIn(true);
+    navigate("/account");
+  }
 
   return (
     <div className="login">
@@ -41,7 +42,7 @@ function Login({ setToken, setIsLoggedIn, isLoggedIn }) {
               type="email"
               name="email"
               placeholder="email"
-              onChange={(e) => setEmail(e.target.value)}            
+              onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
           <Form.Group className=" mb-3">
@@ -55,7 +56,7 @@ function Login({ setToken, setIsLoggedIn, isLoggedIn }) {
           </Form.Group>
 
           <button type="submit" className="btn btn-secondary ">
-            {isLoggedIn ? 'Already Logged In' : 'Login'}
+            {isLoggedIn ? "Already Logged In" : "Login"}
           </button>
         </form>
       </div>
@@ -64,4 +65,3 @@ function Login({ setToken, setIsLoggedIn, isLoggedIn }) {
 }
 
 export default Login;
-
