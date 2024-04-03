@@ -34,7 +34,7 @@ const Books = () => {
     <div className="container padding-top">
       <div className="row g-3">
         {allBooks.map((book) => (
-          <div key={book.id} className="col-lg-4 col-md-6 col-sm-6 mb-4 sm-4">
+          <div key={book.id} className="col-lg-4 col-md-6 col-sm-6 mb-4 sm-4 ">
             <div className="card h-100">
               <img
                 src={book.coverimage}
