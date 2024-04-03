@@ -24,6 +24,6 @@ const booksApi = createApi({
   }),
 });
 
-export const { useGetBooksQuery, usepatchBookMutation, useGetMyBooksQuery } =
+export const { useGetBooksQuery, usePatchBookMutation, useGetMyBooksQuery } =
   booksApi;
 export default booksApi;

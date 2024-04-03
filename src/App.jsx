@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import bookLogo from "./assets/books.png";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/Navigations";
-import Login from "./components/Login";
+import Login from "./components/auth/Login";
 import Home from "./components/Home";
 import Books from "./components/Books";
-import Register from "./components/Register";
+import Register from "./components/auth/Register";
 import SingleBook from "./components/SingleBook";
 import Account from "./components/Account";
 
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div>
-      <NavBar></NavBar>
+      <NavBar token={token} setToken={setToken}></NavBar>
       <Routes>
         <Route path="/books" element={<Home />} />
         <Route path="/" element={<Books />} />

@@ -72,7 +72,7 @@ const User = ({ token }) => {
   return (
     <div className="container" id="userDetails">
       <div className="row g-3">
-        <h2>User: {user.firstname}</h2>
+        <h2>Hello: {user.firstname}</h2>
         {user.books.map((book) => (
           <div key={book.id} className="col-lg-4 col-md-6 col-sm-6 mb-4 sm-4">
             <div className="card h-100">

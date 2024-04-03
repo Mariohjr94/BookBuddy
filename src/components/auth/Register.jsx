@@ -7,6 +7,7 @@ function Register({ setToken }) {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
   async function handleFormSubmit(e) {
     e.preventDefault();
@@ -26,8 +27,9 @@ function Register({ setToken }) {
       }
     );
     const data = await response.json();
-    console.log(data.token);
+    console.log(data);
     setToken(data.token);
+    setMessage(data.message);
   }
 
   return (
@@ -72,6 +74,7 @@ function Register({ setToken }) {
         <button type="submit" className="btn btn-secondary ">
           Register
         </button>
+        <p>{message}</p>
       </form>
     </div>
   );

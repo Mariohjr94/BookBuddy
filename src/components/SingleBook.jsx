@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useGetBooksQuery } from "../API/api";
@@ -51,18 +52,18 @@ const SingleBook = ({ token }) => {
     return <p>Book not found</p>;
   }
   return (
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2  g-4 padding-top single-book">
-      <div class="col">
-        <div class="card">
+    <div className="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2  g-4 padding-top single-book">
+      <div className="col">
+        <div className="card">
           <img
             src={book.coverimage}
             alt={book.title}
             className="card-img-top"
           />
-          <div class="card-body gap">
-            <h5 class="card-title">{book.title}</h5>
-            <p class="card-text">{book.author}</p>
-            <p class="card-text">{book.description}</p>
+          <div className="card-body gap">
+            <h5 className="card-title">{book.title}</h5>
+            <p className="card-text">{book.author}</p>
+            <p className="card-text">{book.description}</p>
             <button
               onClick={checkout}
               type="button"
